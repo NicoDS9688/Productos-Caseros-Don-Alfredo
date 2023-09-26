@@ -101,7 +101,7 @@ class CakeOrderForm(forms.Form):
             'placeholder': 'Escribe un mensaje, ya sea, feliz cumpleaños, feliz aniversario, etc. (Opcional)', 'rows': 5, 'cols': 40
         }),
     )
-    detail = forms.ImageField(
+    detail = forms.CharField(
         max_length=255,
         required=False,
         label='Tema o Detalle',
