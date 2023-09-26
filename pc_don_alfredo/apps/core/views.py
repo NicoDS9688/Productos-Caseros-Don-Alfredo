@@ -79,14 +79,10 @@ def cart_detail(request):
         for item in items_cart:
             print(item.__dict__)
 
-        # TODO: Validar que el precio del licor se sume al precio del producto
-        total_cart_price = sum(item.product.price * item.quantity for item in items_cart)
+        total_cart_price = sum((item.size.price if item.size else item.product.price) * item.quantity for item in items_cart)
+
         for item in items_cart:
-            item.total_price = item.product.price * item.quantity
-            # Agregar el precio del licor
-            # if item.size.price:
-            #     item.total_price += item.size.price * item.quantity
-            print(f"Item: {item.product.name}, Size: {item.size.name if item.size else 'No size selected'}")
+            item.total_price = (item.size.price if item.size else item.product.price) * item.quantity
     else:
         cart = None
         items_cart = []
@@ -177,14 +173,14 @@ def process_order(request):
 
 
 def order_cake(request, id):
-    # Obtén el producto por su ID
+
     product = get_object_or_404(Product, pk=id)
 
     if request.method == 'POST':
-        # Procesa el formulario cuando se envía
+        print(request.POST)
         form = CakeOrderForm(request.POST)
         if form.is_valid():
-            # Obtén los datos del formulario
+
             quantity = form.cleaned_data['quantity']
             shape = form.cleaned_data['shape']
             fillings = form.cleaned_data['fillings']

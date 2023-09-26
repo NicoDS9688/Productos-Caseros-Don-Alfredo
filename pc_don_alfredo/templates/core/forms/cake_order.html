@@ -45,7 +45,7 @@
                     <h6>{{product.description}}</h6>
                     <div class="row">
                         <div class="cakeForm">
-                            <form method="POST" action="{% url 'order_cake' product.id %}">
+                            <form method="POST" action="{% url 'order_cake' product.id %}" id="cake-order-form">
                                 {% csrf_token %}
                                 <div class="row">
                                     {{ form.quantity.label_tag }} {{ form.quantity }}
@@ -83,6 +83,7 @@
                                 </div>
                                 <div class="row">
                                     {{ form.pickup_date.label_tag }} {{ form.pickup_date }}
+                                    <p>*Los pedidos deben realizarse con 48 hs de antelación.*</p>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Hacer pedido</button>
                             </form>

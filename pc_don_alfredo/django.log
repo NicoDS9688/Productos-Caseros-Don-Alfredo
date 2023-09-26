@@ -2998,3 +2998,50 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'price'
 C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /inio/
+Watching for file changes with StatReloader
+Not Found: /
+Not Found: /favicon.ico
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /carrito/
+Traceback (most recent call last):
+  File "C:\Users\edu-d\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edu-d\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py", line 87, in cart_detail
+    print(f"Item: {item.product.name}, Size: {item.size.name if item.size else 'No size selected'}")
+UnboundLocalError: local variable 'item' referenced before assignment
+Internal Server Error: /carrito/
+Traceback (most recent call last):
+  File "C:\Users\edu-d\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edu-d\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py", line 87, in cart_detail
+    print(f"Item: {item.product.name}, Size: {item.size.name if item.size else 'No size selected'}")
+UnboundLocalError: local variable 'item' referenced before assignment
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\edu-d\Desktop\django\pc_don_alfredo\apps\core\forms.py changed, reloading.
+Watching for file changes with StatReloader

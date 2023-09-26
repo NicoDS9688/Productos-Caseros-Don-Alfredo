@@ -1,5 +1,7 @@
 """ Core forms """
 # Core
+from datetime import date, timedelta
+
 from apps.core.models import LiqueurSize
 
 # Django
@@ -36,7 +38,6 @@ class LiqueurOrderForm(forms.Form):
 
 
 class CakeOrderForm(forms.Form):
-    """Form para detalles de torta"""
     SHAPE_CHOICES = [
         ('redonda', 'Redonda'),
         ('rectangular', 'Rectangular'),
@@ -97,14 +98,16 @@ class CakeOrderForm(forms.Form):
         required=False,
         label='Mensaje',
         widget=forms.TextInput(attrs={
-                               'placeholder': 'Escribe un mensaje, ya sea, feliz cumpleaños, feliz aniversario, etc. (Opcional)', 'rows': 5, 'cols': 40}),
+            'placeholder': 'Escribe un mensaje, ya sea, feliz cumpleaños, feliz aniversario, etc. (Opcional)', 'rows': 5, 'cols': 40
+        }),
     )
     detail = forms.ImageField(
         max_length=255,
         required=False,
         label='Tema o Detalle',
         widget=forms.TextInput(attrs={
-                               'placeholder': 'Describe si quieres alguna temática o detalle, ya sea, programa infantil, pasatiempo, etc. (Opcional)', 'rows': 5, 'cols': 40}),
+            'placeholder': 'Describe si quieres alguna temática o detalle, ya sea, programa infantil, pasatiempo, etc. (Opcional)', 'rows': 5, 'cols': 40
+        }),
     )
     full_name = forms.CharField(
         label='Nombre completo',
@@ -117,8 +120,20 @@ class CakeOrderForm(forms.Form):
         required=True,
     )
     pickup_date = forms.DateField(
-        label='Fecha de retiro',
+        label='Fecha de recogida',
         widget=forms.DateInput(attrs={'type': 'date'}),
         required=True,
     )
 
+    def clean_pickup_date(self):
+        pickup_date = self.cleaned_data.get('pickup_date')
+        if pickup_date:
+            today = date.today()
+            min_pickup_date = today + timedelta(days=2)
+
+            if pickup_date < min_pickup_date:
+                raise forms.ValidationError(
+                    'La fecha de recogida debe ser al menos con 48hs de antelación.'
+                )
+
+        return pickup_date
