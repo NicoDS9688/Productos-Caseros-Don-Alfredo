@@ -143,6 +143,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'pcdonalfredo@gmail.com'
 EMAIL_HOST_PASSWORD = 'uhpz niaq tebc cqbr'
-# EMAIL_DESTINO = 'monikstorrere@gmail.com'
-# EMAIL_DESTINO = 'nicolasdickel@gmail.com'
 EMAIL_DESTINO = 'pcdonalfredo@gmail.com'
