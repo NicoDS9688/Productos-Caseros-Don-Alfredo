@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Catálogo - Caseros Don Alfredo{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="welcomeBackground">
+        <h1 class="titlePdct">Nuestros productos</h1>
+        <div class="productsCatalog">
+            <a class="productCatalog" href="{% url 'mermeladas' %}">
+                <div class="iconContainer">
+                    <img src="{% static 'images/jam_icon.png' %}" alt="Icono Mermelada">
+                </div>
+                <h3>Mermeladas</h3>
+            </a>
+            <a class="productCatalog" href="{% url 'licores' %}">
+                <div class="iconContainer">
+                    <img src="{% static 'images/licor_icon.png' %}" alt="Icono Licor">
+                </div>
+                <h3>Licores</h3>
+            </a>
+            <a class="productCatalog" href="{% url 'tartas' %}">
+                <div class="iconContainer">
+                    <img src="{% static 'images/cake_icon.png' %}" alt="Icono Torta">
+                </div>
+                <h3>Tartas y Tortas</h3>
+            </a>
+            <a class="productCatalog" href="{% url 'dulces' %}">
+                <div class="iconContainer">
+                    <img src="{% static 'images/sweets_icon.png' %}" alt="Icono Masita">
+                </div>
+                <h3>Masitas y Postres</h3>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

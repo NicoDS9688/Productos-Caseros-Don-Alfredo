@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Productos Caseros Don Alfredo{% endblock %}
+
+
+{% block content %}
+<div class="main">
+    <div class="container">
+        <div class="welcomeBackground">
+            <div class="welcome">
+                <div class="titleContainer">
+                    <h4 class="title1">Bienvenido a</h4>
+                </div>
+                <h1 class="title2">Productos Caseros Don Alfredo</h1>
+                <div class="titleContainer">
+                    <h6 class="title3">Elaborados por Mónica Storrer</h6>
+                </div>
+                <a href="{% url 'catalogo' %}" class="btn btn-primary">Hacer Pedido</a>
+            </div>
+        </div>
+    </div>
+    <div class="productsContainer">
+        <a class="productBox" href="{% url 'mermeladas' %}">
+            <div class="iconContainer">
+                <img src="{% static 'images/jam_icon.png' %}" alt="Icono Mermelada">
+            </div>
+            <h3>Mermeladas</h3>
+        </a>
+        <a class="productBox" href="{% url 'licores' %}">
+            <div class="iconContainer">
+                <img src="{% static 'images/licor_icon.png' %}" alt="Icono Licor">
+            </div>
+            <h3>Licores</h3>
+        </a>
+        <a class="productBox" href="{% url 'tartas' %}">
+            <div class="iconContainer">
+                <img src="{% static 'images/cake_icon.png' %}" alt="Icono Torta">
+            </div>
+            <h3>Tartas y Tortas</h3>
+        </a>
+        <a class="productBox" href="{% url 'dulces' %}">
+            <div class="iconContainer">
+                <img src="{% static 'images/sweets_icon.png' %}" alt="Icono Dulces">
+            </div>
+            <h3>Masitas y Postres</h3>
+        </a>
+    </div>
+    <div class="locationContainer">
+        <div class="row">
+            <div class="col-3">
+                <div class="mapContainer">
+                    <img src="{% static 'images/map.png' %}" alt="Don Alfredo logo">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="location">
+                    <h4>Pick ups en esta ubicación:</h4>
+                    <h6>Sobre Calle Reinald Rinke</h6>
+                    <h6>Entre Carupayty y Pirizal</h6>
+                    <h6>Obligado, Itapúa</h6>
+                </div>
+                <div class="gmLocation">
+                    <button type="button" class="btn btn-primary">Ver en Google Maps</button>
+                </div>
+            </div>
+            <div class="col-4">
+                <a class="logoContainer2" href="{% url 'inicio' %}">
+                    <img src="{% static 'images/don_alfredo_logo.png' %}" alt="Don Alfredo logo">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

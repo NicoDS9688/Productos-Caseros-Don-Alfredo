@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Carrito - Caseros Don Alfredo{% endblock %}
+
+
+{% block content %}
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Ingrese sus datos</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="orderForm">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="full_name">Nombre completo:</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Número de teléfono:</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup_date">Fecha de retiro:</label>
+                        <input type="date" class="form-control" id="pickup_date" name="pickup_date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="welcomeBackground">
+        <h1 class="titlePdct">Carrito:</h1>
+        <a href="{% url 'catalogo' %}" class="btn btn-primary">Agregar productos al carrito</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">
+            Hacer Pedido
+        </button>
+        <div class="containerBox">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cantidad o Peso</th>
+                        <th scope="col">Detalles</th>
+                        <th scope="col">Precio unitario</th>
+                        <th scope="col">Precio por cantidad</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items_cart %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ item.product.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            {% if item.size %}
+                            Tamaño: {{ item.size }}
+                            {% endif %}
+                        </td>
+                        {% if item.product.price != 0 %}
+                        <td>Gs. {{ item.product.price }}</td>
+                        {% else %}
+                        <td>Gs. {{ item.size.price }}</td>
+                        {% endif %}
+                        <td>Gs. {{ item.total_price }}</td>
+                        <td>
+                            <form method="post" action="{% url 'remove_cart_item' item.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-link">
+                                    <img src="{% static 'images/trash_icon.png' %}" alt="Icono Basurero"
+                                        style="height: 35px; width: 35px;">
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5"><strong>Total del carrito:</strong></td>
+                        <td><strong>Gs. {{ total_cart_price }}</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

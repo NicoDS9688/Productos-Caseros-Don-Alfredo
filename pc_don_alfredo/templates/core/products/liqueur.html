@@ -1,0 +1,25 @@
+{% extends 'base-products.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Productos Caseros Don Alfredo{% endblock %}
+
+{% block product %}
+<div class="boxContainer">
+    <a class="catalogBox" href="{% url 'liqueur' id=1 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/limoncello.jpg' %}" alt="Foto Tarta Kinoto">
+        </div>
+        <h3 class="titleBox">Limoncello</h3>
+    </a>
+    <a class="catalogBox" href="{% url 'liqueur' id=2 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/liqueur_nispero.jpg' %}" alt="Foto Bizcocho Banana">
+        </div>
+        <h3 class="titleBox">Licor de Níspero</h3>
+    </a>
+</div>
+
+{% endblock %}

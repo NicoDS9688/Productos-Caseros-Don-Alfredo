@@ -1,0 +1,96 @@
+{% extends 'base-products.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Productos Caseros Don Alfredo{% endblock %}
+
+{% block product %}
+<div class="boxContainer">
+    <div class="jamBox">
+        <div class="containerBox">
+            <div class="row">
+                <div class="col-4">
+                    <div class="imageContainer">
+                        <div id="miCarrusel" class="carousel slide" data-bs-ride="carousel">
+
+                            <div class="carousel-inner">
+                                {% for product_image in product.image.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <img src="{{ product_image.image.url }}" alt="{{ product.name }} Image"
+                                        height="100%" width="100%">
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <a class="carousel-control-prev" href="#miCarrusel" data-bs-slide="prev" id="custom-prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#miCarrusel" data-bs-slide="next" id="custom-next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <h4 class="price">Precio: Gs. {{product.price}} por {{product.content}} {{product.unit}} </h4>
+                        </div>
+                        <div class="row">
+                            <h2 class="productTitle">{{product.name}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h6>{{product.description}}</h6>
+                    <div class="row">
+                        <div class="cakeForm">
+                            <form method="POST" action="{% url 'order_cake' product.id %}">
+                                {% csrf_token %}
+                                <div class="row">
+                                    {{ form.quantity.label_tag }} {{ form.quantity }}
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.shape.label_tag }} {{ form.shape }}
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.fillings.label_tag }} {{ form.fillings }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.fruits.label_tag }} {{ form.fruits }}
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.flavor.label_tag }} {{ form.flavor }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {{ form.message.label_tag }} {{ form.message }}
+                                </div>
+                                <div class="row">
+                                    {{ form.detail.label_tag }} {{ form.detail }}
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        {{ form.full_name.label_tag }} {{ form.full_name }}
+                                    </div>
+                                    <div class="col">
+                                        {{ form.phone_number.label_tag }} {{ form.phone_number }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {{ form.pickup_date.label_tag }} {{ form.pickup_date }}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Hacer pedido</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

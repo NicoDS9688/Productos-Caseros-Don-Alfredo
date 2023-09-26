@@ -1,0 +1,332 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(white 20%, black 60%);
+    height: 100%;
+}
+
+
+.navbar-brand {
+    max-width: 6%;
+    max-height: 6%;
+    display: flex;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    background-color: white;
+}
+
+
+.navbar {
+    height: 140px;
+    background-color: white;
+}
+
+
+.navbarContainer {
+    margin-right: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarContainer .nav-item {
+    margin-left: 20%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+@keyframes backgroundChange {
+
+    0%,
+    20% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/cookies_background.jpg')
+    }
+
+    25%,
+    45% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/jam_background.jpg');
+    }
+
+    50%,
+    70% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/kinoto_background.jpg');
+    }
+
+    75%,
+    95% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/banana2_background.jpg');
+    }
+
+    100% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/cookies_background.jpg');
+    }
+}
+
+
+.welcomeBackground {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    animation: backgroundChange 40s linear infinite;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 3%;
+    border-bottom: 3px solid black;
+}
+
+
+.welcome {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.titleContainer {
+    background-color: #dc7027;
+    padding-top: 3px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: auto;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.title2 {
+    font-size: 80px;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.btn {
+    margin-top: 5%;
+    background-color: #C53678;
+    border-color: #C53678;
+    color: white;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background-color: #6b818c;
+    border-color: #6b818c;
+}
+
+.productsContainer {
+    height: 45vh;
+    width: 100%;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -60px;
+}
+
+.productBox {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    height: 60%;
+    min-width: 30%;
+    background-color: #dc7027;
+    border-radius: 20px;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    transition: background-color 0.3s ease;
+}
+
+.productBox:hover {
+    background-color: #ff6a57;
+}
+
+.iconContainer {
+    margin-bottom: 15px;
+}
+
+.row {
+    align-items: center;
+}
+
+.locationContainer {
+    background-color: #dc7027;
+    color: black;
+    width: 90%;
+    padding: 20px;
+    margin-top: 3%;
+    border-radius: 20px;
+}
+
+.logoContainer2 img {
+    max-width: 30%;
+    max-height: 30%;
+    position: sticky;
+    margin-left: 140%;
+}
+
+.mapContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Info */
+.infoContainer {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #dc7027;
+    color: black;
+    border-radius: 20px;
+    width: 500px;
+    height: 220px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Catalog */
+.productsCatalog {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.productCatalog {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    height: 200px;
+    min-width: 20%;
+    background-color: #dc7027;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    transition: background-color 0.3s ease;
+}
+
+.titlePdct {
+    margin-top: 10%;
+    font-family: 'Playfair Display', serif;
+}
+
+.boxContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    align-items: flex-start;
+}
+
+
+.catalogBox {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: black;
+    background-color: #dc7027;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: -120px;
+    margin-bottom: 10px;
+    width: calc(20% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.picContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.picContainer img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #c56423;
+    border-radius: 20px;
+}
+
+.titleBox {
+    margin-top: 10px;
+}
+
+.jamBox {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: small;
+    color: black;
+    background-color: #dc7027;
+    border-radius: 20px;
+    padding: 10px;
+    width: 60%;
+    margin-top: -225px;
+}
+
+.containerBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    padding: 50px;
+    gap: 20px;
+}
+
+
+.imageContainer {
+    height: 50%;
+    width: 100%;
+}
+
+.productTitle {
+    margin-top: -100px;
+}
+
+.price {
+    margin-top: 25px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.containerBox {
+    height: 100%;
+    overflow: auto;
+}

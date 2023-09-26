@@ -1,0 +1,32 @@
+{% extends 'base-products.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Productos Caseros Don Alfredo{% endblock %}
+
+{% block product %}
+<div class="boxContainer">
+    <a class="catalogBox" href="{% url 'producto' id=3 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/strawberry_jam.jpg' %}" alt="Foto Mermelada Frutilla">
+        </div>
+        <h3 class="titleBox">Mermelada de Frutilla</h3>
+    </a>
+    <a class="catalogBox" href="{% url 'producto' id=4 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/rosella_jam.jpg' %}" alt="Foto Mermelada Rosella">
+        </div>
+        <h3 class="titleBox">Mermelada de Rosella</h3>
+    </a>
+    <a class="catalogBox" href="{% url 'producto' id=5 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/kinoto_jam.jpg' %}" alt="Foto Kinoto en Almíbar">
+        </div>
+        <h3 class="titleBox">Kinoto en almíbar</h3>
+    </a>
+</div>
+
+{% endblock %}
+

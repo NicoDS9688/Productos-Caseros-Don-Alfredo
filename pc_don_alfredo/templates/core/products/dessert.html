@@ -1,0 +1,31 @@
+{% extends 'base-products.html' %}
+{% load static %}
+
+
+{% block styles %}
+{% endblock %}
+{% block title %}Productos Caseros Don Alfredo{% endblock %}
+
+{% block product %}
+<div class="boxContainer">
+    <a class="catalogBox" href="{% url 'producto' id=8 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/cookies.jpg' %}" alt="Foto Masita de Miel">
+        </div>
+        <h3 class="titleBox">Masitas de Miel</h3>
+    </a>
+    <a class="catalogBox" href="{% url 'producto' id=10 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/rice_milk.jpg' %}" alt="Foto Arroz con Leche">
+        </div>
+        <h3 class="titleBox">Arroz con Leche</h3>
+    </a>
+    <a class="catalogBox" href="{% url 'producto' id=11 %}">
+        <div class="picContainer">
+            <img src="{% static 'images/strawberry_dessert.jpg' %}" alt="Foto Postre Frutilla">
+        </div>
+        <h3 class="titleBox">Postre de Frutilla</h3>
+    </a>
+</div>
+
+{% endblock %}
