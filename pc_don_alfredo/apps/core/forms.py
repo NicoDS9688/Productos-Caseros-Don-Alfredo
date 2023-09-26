@@ -124,16 +124,3 @@ class CakeOrderForm(forms.Form):
         widget=forms.DateInput(attrs={'type': 'date'}),
         required=True,
     )
-
-    def clean_pickup_date(self):
-        pickup_date = self.cleaned_data.get('pickup_date')
-        if pickup_date:
-            today = date.today()
-            min_pickup_date = today + timedelta(days=2)
-
-            if pickup_date < min_pickup_date:
-                raise forms.ValidationError(
-                    'La fecha de recogida debe ser al menos con 48hs de antelación.'
-                )
-
-        return pickup_date
