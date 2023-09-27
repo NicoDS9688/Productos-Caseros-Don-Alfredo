@@ -119,8 +119,12 @@ class CakeOrderForm(forms.Form):
         max_length=15,
         required=True,
     )
+
+    today = date.today()
+    min_date = today + timedelta(days=3)
+
     pickup_date = forms.DateField(
         label='Fecha de recogida',
-        widget=forms.DateInput(attrs={'type': 'date'}),
+        widget=forms.DateInput(attrs={'type': 'date', 'min': min_date}),
         required=True,
     )

@@ -61,46 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function () {
-            $("#miCarrusel").carousel();
-        });
-
-        $(document).ready(function () {
-            $("#orderForm").submit(function (e) {
-                e.preventDefault();
-
-                $.ajax({
-                    type: "POST",
-                    url: "{% url 'process_order' %}",
-                    data: $(this).serialize(),
-                    success: function (data) {
-                        alert("Pedido enviado correctamente");
-                        $('#orderModal').modal('hide');
-                    },
-                    error: function () {
-                        alert("Error al enviar el pedido");
-                    }
-                });
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('#cake-order-form');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                if (form.checkValidity()) {
-
-                    form.submit();
-
-                    window.alert('Pedido realizado con éxito. ¡Gracias por tu pedido!');
-                }
-            });
-        });
-    </script>
-    {% block scripts %}
-    {% endblock %}
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
