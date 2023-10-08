@@ -142,5 +142,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'pcdonalfredo@gmail.com'
-EMAIL_HOST_PASSWORD = 'uhpz niaq tebc cqbr'
+EMAIL_HOST_PASSWORD = 'secret'
 EMAIL_DESTINO = 'pcdonalfredo@gmail.com'
